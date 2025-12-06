@@ -1,36 +1,173 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DMD Clothing - Premium Formal Trousers Product Page
 
-## Getting Started
+A modern, feature-rich e-commerce product page built with **Next.js 16**, **React 19**, and **Tailwind CSS 4**, showcasing premium Lycra Cotton formal trousers.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Product Showcase
+- **Interactive Product Gallery** - Multi-image viewer with zoom functionality and feature callouts
+- **Size Chart** - Detailed measurements and fit guide
+- **Product Information** - Comprehensive accordion sections with shipping, returns, and vendor details
+
+### Social Proof & Trust
+- **Live Viewer Counter** - Real-time display of active viewers and recent purchases
+- **Recent Purchase Notifications** - Toast-style popup showing recent customer orders
+- **Reviews & Ratings** - Full 5.0-star rating with 1,929+ customer reviews
+- **Design Variations** - Multiple social proof layouts (Minimal, Bold, Premium, Social-First, Urgency)
+
+### E-Commerce Features
+- **Dynamic Pricing** - 50% OFF discount display with original price
+- **Size & Color Selection** - Interactive selectors for available options
+- **Wishlist Integration** - Heart icon to save products
+- **Related Products** - "You May Also Like" section with quick-add functionality
+- **Trust Badges** - Security, shipping, returns, and quality assurance badges
+
+### Design & UX
+- **Responsive Layout** - Mobile-first design with grid optimization
+- **Smooth Animations** - Slide-in, fade-in, and floating animations
+- **Dark Mode Support** - Full light/dark theme with OKLch color system
+- **Marquee Scrolling** - Brand carousel and promotional scrolling text
+- **Modern UI Components** - Built with shadcn/ui and Radix UI primitives
+
+## 📁 Project Structure
+
+```
+.
+├── app/
+│   ├── globals.css          # Global styles with animations & color system
+│   ├── layout.tsx           # Root layout with metadata
+│   └── page.tsx             # Main product page
+├── components/
+│   ├── ui/                  # shadcn/ui components
+│   ├── product-gallery.tsx  # Image viewer with feature callouts
+│   ├── product-info.tsx     # Price, size, accordion sections
+│   ├── reviews-section.tsx  # Customer reviews & ratings
+│   ├── social-proof-widget.tsx  # Statistics & trust indicators
+│   ├── recent-purchase-popup.tsx # Purchase notifications
+│   ├── design-variations.tsx # Social proof layout options
+│   ├── footer.tsx           # Footer with links & payment methods
+│   ├── header.tsx           # Navigation & promo slider
+│   └── [other components]
+├── lib/
+│   └── utils.ts             # Utility functions (cn)
+├── package.json             # Dependencies
+└── tailwind.config.ts       # Tailwind configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 16.0.7
+- **Runtime**: React 19.2.0
+- **Styling**: Tailwind CSS 4.1.9 with PostCSS
+- **UI Components**: shadcn/ui with Radix UI
+- **Icons**: Lucide React
+- **Analytics**: Vercel Analytics
+- **Forms**: React Hook Form
+- **Utilities**: clsx, tailwind-merge
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation & Setup
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Run development server
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Build for production
+npm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start production server
+npm start
 
-## Deploy on Vercel
+# Run linter
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) to view the project.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Design System
+
+The project uses OKLch color system with CSS variables defined in 
+
+globals.css
+
+:
+- **Primary**: Blue (260°)
+- **Accent**: Green (150°)
+- **Destructive**: Red (27.325°)
+- **Chart Colors**: 5-color palette for data visualization
+- **Radius**: 0.625rem base with sm/md/lg/xl variants
+
+## 📱 Key Components
+
+| Component | Purpose |
+|-----------|---------|
+| 
+
+ProductGallery
+
+ | Multi-image viewer with zoom & feature annotations |
+| 
+
+ProductInfo
+
+ | Pricing, sizing, specifications & policies |
+| 
+
+ReviewsSection
+
+ | Customer reviews with 5-star rating system |
+| 
+
+SocialProofWidget
+
+ | Statistics: 4.8★, 15K+ customers, 25K+ units sold |
+| 
+
+DesignVariations
+
+ | 5 different social proof layout options |
+| 
+
+RecentPurchasePopup
+
+ | Toast notifications for recent orders |
+| 
+
+Footer
+
+ | Links, payment methods & company info |
+
+## 🎯 Performance Optimizations
+
+- Image optimization with Next.js 
+
+Image
+
+ component
+- CSS animations and transitions for smooth UX
+- Lazy loading of components
+- Optimized bundle with tree-shaking
+- Remote image support configured for 
+
+image.cdn.shpy.in
+
+
+
+## 📋 Features Showcase
+
+✅ 50% discount display  
+✅ Live viewer counter (47 people viewing)  
+✅ Recent purchase notifications  
+✅ Comprehensive size chart  
+✅ 7-day return policy  
+✅ Free shipping info  
+✅ Cash on Delivery available  
+✅ 1,929 verified customer reviews  
+✅ Multiple payment methods (UPI, Visa, MasterCard, etc.)  
+✅ Responsive design for all devices  
+
+## 📝 License
+
+This project was bootstrapped with [create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
