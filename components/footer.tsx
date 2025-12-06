@@ -1,147 +1,192 @@
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
+"use client"
+
+import { Facebook, Instagram, Linkedin, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import Link from "next/link"
 
 const footerLinks = {
-  shop: ["Men's Wear", "Women's Wear", "New Arrivals", "Sale", "Best Sellers"],
-  support: ["Contact Us", "FAQs", "Shipping Info", "Returns", "Size Guide"],
-  company: ["About Us", "Careers", "Blog", "Press", "Affiliates"],
+  shop: [
+    { label: "All Trousers", href: "#" },
+    { label: "Formal", href: "#" },
+  ],
+  help: [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Refund Policy", href: "#" },
+    { label: "Terms & Condition", href: "#" },
+  ],
+  about: [
+    { label: "Our Story", href: "#" },
+    { label: "Sustainability", href: "#" },
+  ],
 }
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+]
+
+const paymentMethods = [
+  { name: "UPI", icon: "💳" },
+  { name: "Visa", icon: "visa" },
+  { name: "MasterCard", icon: "mc" },
+  { name: "RuPay", icon: "rupay" },
+  { name: "Wallets", icon: "wallet" },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background mt-20">
-      {/* Newsletter Section */}
-      <div className="border-b border-background/10">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Join Our Newsletter</h3>
-              <p className="text-background/70">Get 10% off your first order and exclusive offers</p>
+    <footer className="bg-[#1a1a1a] text-white mt-16">
+      {/* Main Footer Content */}
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        {/* Top Section - About */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-10 border-b border-white/10">
+          <div className="flex items-start gap-6">
+            {/* Logo */}
+            <div className="flex-shrink-0 border-2 border-white px-4 py-2">
+              <div className="text-2xl font-bold tracking-wider">DMD</div>
+              <div className="text-[10px] tracking-[0.2em] text-center">CLOTHING</div>
             </div>
-            <div className="flex gap-3 w-full lg:w-auto">
-              <Input
-                placeholder="Enter your email"
-                className="bg-background/10 border-background/20 text-background placeholder:text-background/50 w-full lg:w-80"
-              />
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
-                Subscribe
-              </Button>
+
+            {/* About Text */}
+            <div className="max-w-lg">
+              <h3 className="text-lg font-semibold mb-2">About DMD Clothing</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Premium trousers, consciously crafted in small batches using natural fabrics and meticulous finishing.
+                Slow-fashion ethics, timeless silhouettes, and everyday comfort—made in India for people and the planet.
+              </p>
             </div>
           </div>
+
+          {/* CTA Button */}
+          <Button className="bg-[#c45c3e] hover:bg-[#b04d31] text-white font-medium px-6 py-2 rounded-md transition-all hover:scale-105">
+            Shop Trousers
+          </Button>
         </div>
-      </div>
 
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <div className="text-3xl font-bold tracking-tighter mb-4">
-              DMD<sup className="text-xs">™</sup>
-            </div>
-            <p className="text-background/70 text-sm mb-6 leading-relaxed">
-              Premium formal wear for the modern professional. Quality fabrics, perfect fit, timeless style.
-            </p>
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Shop Links */}
+        {/* Links Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-b border-white/10">
+          {/* Shop */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Shop</h4>
+            <h4 className="font-semibold text-sm tracking-wide mb-4">SHOP</h4>
             <ul className="space-y-3">
               {footerLinks.shop.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-background/70 hover:text-background transition-colors text-sm">
-                    {link}
-                  </a>
+                <li key={link.label}>
+                  <Link href={link.href} className="text-[#7d9cb8] hover:text-white transition-colors text-sm">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Support Links */}
+          {/* Help */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Support</h4>
+            <h4 className="font-semibold text-sm tracking-wide mb-4">HELP</h4>
             <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-background/70 hover:text-background transition-colors text-sm">
-                    {link}
-                  </a>
+              {footerLinks.help.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-[#7d9cb8] hover:text-white transition-colors text-sm">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* About */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Company</h4>
+            <h4 className="font-semibold text-sm tracking-wide mb-4">ABOUT</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-background/70 hover:text-background transition-colors text-sm">
-                    {link}
-                  </a>
+              {footerLinks.about.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-[#7d9cb8] hover:text-white transition-colors text-sm">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Contact</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-sm text-background/70">
-                <Phone className="w-4 h-4" />
-                +91 98765 43210
-              </li>
-              <li className="flex items-center gap-3 text-sm text-background/70">
-                <Mail className="w-4 h-4" />
-                support@dmd.com
-              </li>
-              <li className="flex items-start gap-3 text-sm text-background/70">
-                <MapPin className="w-4 h-4 mt-0.5" />
-                Mumbai, India
-              </li>
-            </ul>
+            <h4 className="font-semibold text-sm tracking-wide mb-4">CONTACT</h4>
+            <div className="space-y-3">
+              {/* Phone */}
+              <a
+                href="tel:+917744844867"
+                className="flex items-center gap-2 bg-[#2a2a2a] hover:bg-[#333] rounded-md px-3 py-2 transition-colors group"
+              >
+                <Phone className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                <span className="text-sm text-gray-300 group-hover:text-white">+91-7744844867</span>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:dmdcc.onlinestore@gmail.com"
+                className="flex items-center gap-2 bg-[#2a2a2a] hover:bg-[#333] rounded-md px-3 py-2 transition-colors group"
+              >
+                <Mail className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                <span className="text-sm text-gray-300 group-hover:text-white">dmdcc.onlinestore@gmail.com</span>
+              </a>
+
+              {/* Social Icons */}
+              <div className="flex gap-2 pt-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-[#1a1a1a] transition-all hover:scale-110"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-background/10">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/60">
-            <p>© 2025 DMD Clothing. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-background transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-background transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-background transition-colors">
-                Cookie Policy
-              </a>
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6">
+          {/* Copyright */}
+          <p className="text-gray-500 text-sm">
+            © 2025 DMD Clothing — Made <span className="text-[#7d9cb8]">consciously</span> in India.
+          </p>
+
+          {/* Payment Methods */}
+          <div className="flex items-center gap-2">
+            {/* UPI */}
+            <div className="bg-[#2a2a2a] rounded px-3 py-1.5 flex items-center gap-1.5">
+              <span className="text-xs text-gray-300">≡</span>
+              <span className="text-xs text-gray-300">UPI</span>
+            </div>
+
+            {/* Visa */}
+            <div className="bg-[#2a2a2a] rounded px-3 py-1.5 flex items-center gap-1.5">
+              <span className="text-[10px] font-bold text-blue-400 italic">VISA</span>
+              <span className="text-xs text-gray-300">Visa</span>
+            </div>
+
+            {/* MasterCard */}
+            <div className="bg-[#2a2a2a] rounded px-3 py-1.5 flex items-center gap-1.5">
+              <div className="flex -space-x-1">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+              </div>
+              <span className="text-xs text-gray-300">MasterCard</span>
+            </div>
+
+            {/* RuPay */}
+            <div className="bg-[#2a2a2a] rounded px-3 py-1.5 flex items-center gap-1.5">
+              <span className="text-[10px] font-bold text-green-400">RuPay</span>
+              <span className="text-xs text-gray-300">RuPay</span>
+            </div>
+
+            {/* Wallets */}
+            <div className="bg-[#2a2a2a] rounded px-3 py-1.5 flex items-center gap-1.5">
+              <span className="text-xs">💳</span>
+              <span className="text-xs text-gray-300">Wallets</span>
             </div>
           </div>
         </div>

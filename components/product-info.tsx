@@ -17,6 +17,7 @@ import {
   Phone,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { CashfreePayments } from "@/components/cashfree-payments"
 
 const sizes = ["32", "34", "36", "38"]
 
@@ -213,12 +214,7 @@ export function ProductInfo() {
                 <div className="px-4 pb-4 pt-1">
                   {/* Details Content */}
                   {item.id === "details" && (
-                    <div className="flex items-center gap-3 p-3 bg-background rounded-lg border border-border">
-                      <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center">
-                        <Package className="w-6 h-6 text-muted-foreground" />
-                      </div>
-                      <span className="text-sm text-muted-foreground">Perfume Product</span>
-                    </div>
+                    <CashfreePayments /> // Replace with CashfreePayments component
                   )}
 
                   {/* Key Features Content */}
@@ -387,7 +383,6 @@ export function ProductInfo() {
                           <p className="text-sm text-purple-700 dark:text-purple-400">
                             Returns or exchanges are permitted within{" "}
                             <span className="font-semibold">7 (seven) calendar days</span> from the date of delivery.
-                            div&gt;
                           </p>
                         </div>
                       </div>

@@ -4,6 +4,7 @@ import { Search, Heart, User, ShoppingBag, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import Link from "next/link"
+import { PromoSlider } from "./promo-slider"
 
 const announcements = [
   "Flat 50% OFF on All Formal Wear",
@@ -18,6 +19,8 @@ export function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200">
+      <PromoSlider />
+
       <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between text-xs">
           <nav className="flex items-center gap-1 text-gray-600 flex-wrap">
@@ -57,7 +60,7 @@ export function Header() {
           </Button>
 
           <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold tracking-tighter gradient-text">
+            <div className="text-2xl font-bold tracking-tighter">
               DMD<sup className="text-[10px] text-muted-foreground">™</sup>
             </div>
             <span className="text-[10px] text-muted-foreground hidden sm:block font-medium tracking-widest uppercase">
