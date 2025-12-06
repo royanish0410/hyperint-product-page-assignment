@@ -32,7 +32,7 @@ export function PromoSlider() {
           <div
             className={`flex gap-6 items-center whitespace-nowrap ${autoScroll ? "animate-scroll" : ""}`}
             style={{
-              animation: autoScroll ? "scroll 50s linear infinite" : "none",
+              animation: autoScroll ? "scroll 15s linear infinite" : "none",
             }}
           >
             {displayPromos.map((promo, index) => (
